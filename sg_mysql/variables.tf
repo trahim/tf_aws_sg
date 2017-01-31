@@ -10,4 +10,11 @@ variable "vpc_id" {
 variable "source_cidr_block" {
   description = "The source CIDR block to allow traffic from"
   type = "list"
+  default = []
+}
+
+variable "security_groups" {
+  description = "The Security Groups to allow traffic from"
+  type = "list"
+  default = []
 }

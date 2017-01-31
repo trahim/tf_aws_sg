@@ -26,6 +26,7 @@ resource "aws_security_group" "main_security_group" {
         to_port = 22
         protocol = "tcp"
         cidr_blocks = ["${var.source_cidr_block}"]
+        security_groups = ["${var.security_groups}"]
     }
 
     // allow traffic for TCP 3306
@@ -34,6 +35,7 @@ resource "aws_security_group" "main_security_group" {
         to_port = 3306
         protocol = "tcp"
         cidr_blocks = ["${var.source_cidr_block}"]
+        security_groups = ["${var.security_groups}"]
     }
 
 }
